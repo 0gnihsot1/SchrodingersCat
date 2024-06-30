@@ -1,1 +1,1 @@
-# Schr-dingersKatze
+# SchrodingersCat
