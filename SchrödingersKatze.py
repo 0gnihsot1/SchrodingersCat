@@ -1,6 +1,7 @@
 import pyaudio
 import numpy as np
 import asyncio
+import random
 
 # サンプリングレートを定義
 RATE = 44100
@@ -43,6 +44,9 @@ def chord(freqs, length, gain):
         chord_wave += np.sin(np.arange(slen) * t) * gain / len(freqs)
     return chord_wave
 
+# 50%の確率で音を鳴らす
+def observe(sound):
+    return sound if random.random() < 0.5 else 0
 # 再生
 def play_wave(stream, samples):
     stream.write(samples.astype(np.float32).tostring())
@@ -57,243 +61,244 @@ stream = p.open(format=pyaudio.paFloat32,
 
 # ♪『ねこふんじゃった』
 # ねこ　ふんじゃった　ねこ　ふんじゃった　ねこ　ふんずけちゃったら　ひっかいた
-play_wave(stream, tone(1, L4+L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes1 = [F2_, A1_]
-play_wave(stream, chord(chord_notes1, L8, 1.0))
-chord_notes1 = [F2_, A1_]
-play_wave(stream, chord(chord_notes1, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(0, L4+L8, 1.0))
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes1 = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
+play_wave(stream, chord(chord_notes, L8, 1.0))
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
+play_wave(stream, chord(chord_notes, L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # ねこ　ひっかいた　ねこ　ひっかいた　ねこ　びっくりして　ひっかいた
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # わるいねこめ　つめをきれ
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(A2_, L8, 0.3))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(A2_), L8, 0.3))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(A2_, L8, 0.3))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(A2_), L8, 0.3))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(A2_, L8, 0.3))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(A2_), L8, 0.3))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(C3_, L8, 0.3))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(C3_), L8, 0.3))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D3_, L8, 0.3))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D3_), L8, 0.3))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # やねをおりて　ひげをそれ
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(D3_, L8, 0.3))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(D3_), L8, 0.3))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(D3_, L8, 0.3))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(D3_), L8, 0.3))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(D3_, L8, 0.3))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(D3_), L8, 0.3))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(C3_, L8, 0.3))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(C3_), L8, 0.3))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(A2_, L8, 0.3))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(A2_), L8, 0.3))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # ねこ　にゃーご　にゃーご　ねこかぶり
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-play_wave(stream, tone(F1, L8, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-play_wave(stream, tone(G1, L8, 1.0))
-play_wave(stream, tone(G1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+play_wave(stream, tone(observe(F1), L8, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+play_wave(stream, tone(observe(G1), L8, 1.0))
+play_wave(stream, tone(observe(G1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # ねこ　なでごえ　あまえてる
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(G1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(G1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(G1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(G1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(G1_, L8, 1.0))
-play_wave(stream, tone(G1, L8, 1.0))
-play_wave(stream, tone(G1_, L8, 1.0))
-play_wave(stream, tone(A1, L8, 1.0))
-play_wave(stream, tone(A1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(G1_), L8, 1.0))
+play_wave(stream, tone(observe(G1), L8, 1.0))
+play_wave(stream, tone(observe(G1_), L8, 1.0))
+play_wave(stream, tone(observe(A1), L8, 1.0))
+play_wave(stream, tone(observe(A1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # ねこ　ごめんなさい　ねこ　ごめんなさい　ねこ　おどかしちゃって　ごめんなさい
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes1 = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes1 = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes1, L8, 1.0))
-chord_notes1 = [F2_, A1_]
+chord_notes1 = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes1, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes1 = [F2_, A1_]
+chord_notes1 = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(D1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # ねこ　よっといで　ねこ　よっといで　ねこ　かつぶしやるから　よっといで
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2, B1]
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(C1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(C1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(D1_, L8, 1.0))
-chord_notes = [F2, B1]
+play_wave(stream, tone(observe(D1_), L8, 1.0))
+chord_notes = [observe(F2), observe(B1)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(F1_, L8, 1.0))
-chord_notes = [F2_, A1_]
+play_wave(stream, tone(observe(F1_), L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2_, A1_]
+chord_notes = [observe(F2_), observe(A1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
 
 # 終奏
-play_wave(stream, tone(1, L8, 1.0))
-chord_notes = [F2_, A1_, C1_]
+play_wave(stream, tone(0, L8, 1.0))
+chord_notes = [observe(F2_), observe(A1_), observe(C1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(C2_, L16, 1.0))
-play_wave(stream, tone(D2, L8, 1.0))
-play_wave(stream, tone(C2_, L8, 1.0))
-play_wave(stream, tone(1, L8, 1.0))
-chord_notes = [F2, B1, C1_]
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(C2_), L16, 1.0))
+play_wave(stream, tone(observe(D2), L8, 1.0))
+play_wave(stream, tone(observe(C2_), L8, 1.0))
+play_wave(stream, tone(0, L8, 1.0))
+chord_notes = [observe(F2), observe(B1), observe(C1_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
-chord_notes = [F2_, A1_, F0_]
+chord_notes = [observe(F2_), observe(A1_), observe(F0_)]
 play_wave(stream, chord(chord_notes, L8, 1.0))
+play_wave(stream, tone(0, L8, 1.0))
 
 stream.close()
 p.terminate()
