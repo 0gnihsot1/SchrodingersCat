@@ -76,7 +76,7 @@ def main():
   global deadNote
   
   # 『ねこふんじゃった』
-  print("『シュレーディンガーのねこ○んじゃった』")
+  print("『シュレーディンガーのねこふんじゃった』")
   
   # ねこ　ふんじゃった　ねこ　ふんじゃった
   play_wave(stream, tone(0, L4+L8, 1.0))
