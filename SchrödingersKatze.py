@@ -49,7 +49,7 @@ def chord(freqs, length, gain):
     return chord_wave
 
 # 50%の確率で音を鳴らす
-def observe(sound):
+def measure(sound):
     global aliveNote
     global deadNote
     if random.random() < 0.5:
@@ -80,249 +80,249 @@ def main():
   
   # ねこ　ふんじゃった　ねこ　ふんじゃった
   play_wave(stream, tone(0, L4+L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　ふんずけちゃったら　ひっかいた
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　ひっかいた　ねこ　ひっかいた
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　びっくりして　ひっかいた
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # わるいねこめ　つめをきれ
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(A2_), L8, 0.3))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(A2_), L8, 0.3))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(A2_), L8, 0.3))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(A2_), L8, 0.3))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(A2_), L8, 0.3))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(A2_), L8, 0.3))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(C3_), L8, 0.3))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(C3_), L8, 0.3))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D3_), L8, 0.3))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D3_), L8, 0.3))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # やねをおりて　ひげをそれ
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(D3_), L8, 0.3))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(D3_), L8, 0.3))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(D3_), L8, 0.3))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(D3_), L8, 0.3))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(D3_), L8, 0.3))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(D3_), L8, 0.3))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(C3_), L8, 0.3))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(C3_), L8, 0.3))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(A2_), L8, 0.3))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(A2_), L8, 0.3))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　にゃーご　にゃーご　ねこかぶり
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  play_wave(stream, tone(observe(F1), L8, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  play_wave(stream, tone(observe(G1), L8, 1.0))
-  play_wave(stream, tone(observe(G1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  play_wave(stream, tone(measure(F1), L8, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  play_wave(stream, tone(measure(G1), L8, 1.0))
+  play_wave(stream, tone(measure(G1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　なでごえ　あまえてる
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(G1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(G1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(G1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(G1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(G1_), L8, 1.0))
-  play_wave(stream, tone(observe(G1), L8, 1.0))
-  play_wave(stream, tone(observe(G1_), L8, 1.0))
-  play_wave(stream, tone(observe(A1), L8, 1.0))
-  play_wave(stream, tone(observe(A1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(G1_), L8, 1.0))
+  play_wave(stream, tone(measure(G1), L8, 1.0))
+  play_wave(stream, tone(measure(G1_), L8, 1.0))
+  play_wave(stream, tone(measure(A1), L8, 1.0))
+  play_wave(stream, tone(measure(A1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　ごめんなさい　ねこ　ごめんなさい
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes1 = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes1 = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes1, L8, 1.0))
-  chord_notes1 = [observe(F2_), observe(A1_)]
+  chord_notes1 = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes1, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes1 = [observe(F2_), observe(A1_)]
+  chord_notes1 = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　おどかしちゃって　ごめんなさい
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(D1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　よっといで　ねこ　よっといで
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # ねこ　かつぶしやるから　よっといで
-  play_wave(stream, tone(observe(D2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(C1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(C1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(D1_), L8, 1.0))
-  chord_notes = [observe(F2), observe(B1)]
+  play_wave(stream, tone(measure(D1_), L8, 1.0))
+  chord_notes = [measure(F2), measure(B1)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(F1_), L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  play_wave(stream, tone(measure(F1_), L8, 1.0))
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_)]
+  chord_notes = [measure(F2_), measure(A1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   
   # 終奏
   play_wave(stream, tone(0, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_), observe(C1_)]
+  chord_notes = [measure(F2_), measure(A1_), measure(C1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(C2_), L16, 1.0))
-  play_wave(stream, tone(observe(D2), L8, 1.0))
-  play_wave(stream, tone(observe(C2_), L8, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(C2_), L16, 1.0))
+  play_wave(stream, tone(measure(D2), L8, 1.0))
+  play_wave(stream, tone(measure(C2_), L8, 1.0))
   play_wave(stream, tone(0, L8, 1.0))
-  chord_notes = [observe(F2), observe(B1), observe(C1_)]
+  chord_notes = [measure(F2), measure(B1), measure(C1_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
-  chord_notes = [observe(F2_), observe(A1_), observe(F0_)]
+  chord_notes = [measure(F2_), measure(A1_), measure(F0_)]
   play_wave(stream, chord(chord_notes, L8, 1.0))
   play_wave(stream, tone(0, L8, 1.0))
   
@@ -332,7 +332,7 @@ def main():
   print("鳴った音は "+str(aliveNote)+" 個")
   print("鳴らなかった音は "+str(deadNote)+" 個")
   probability = aliveNote / (aliveNote + deadNote) * 100
-  print(f"およそ {probability:.2f} %の確率で音がなりました。")
+  print(f"およそ {probability:.2f} %の確率で音が鳴りました。")
 
 if __name__ == "__main__":
     main()
