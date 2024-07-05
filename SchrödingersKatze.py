@@ -1,6 +1,5 @@
 import pyaudio
 import numpy as np
-import asyncio
 import random
 
 # サンプリングレートを定義
@@ -54,6 +53,7 @@ def measure(sound):
     global deadNote
     if random.random() < 0.5:
       aliveNote += 1
+      print("\r"+"alive : "+str(aliveNote)+"  dead : "+str(deadNote),end="")
       return sound
     else:
       deadNote += 1
@@ -329,6 +329,7 @@ def main():
   stream.close()
   p.terminate()
   
+  print()
   print("鳴った音は "+str(aliveNote)+" 個")
   print("鳴らなかった音は "+str(deadNote)+" 個")
   probability = aliveNote / (aliveNote + deadNote) * 100
